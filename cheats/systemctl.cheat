@@ -36,7 +36,7 @@ journalctl --vacuum-time=<jtime>
 # empty journal by size
 journalctl --vacuum-size=<jsize>
 
-$ jtime: echo -e '3d\n2w\n3m' | tr '\n' ' '
+$ jtime: echo -e '3d\n2w\n1m' | tr '\n' ' '
 $ jsize: echo -e '500M\n1G' | tr '\n' ' '
 
 $ service_inactive: systemctl list-units --type=service --state=inactive | awk '{print $1}' | grep .service | sed 's/.service$//'
