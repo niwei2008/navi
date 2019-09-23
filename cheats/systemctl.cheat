@@ -31,10 +31,13 @@ systemctl list-unit-files --type=service --state=enabled
 systemctl list-unit-files --type=service --state=disabled
 
 # empty journal by time
-journalctl --vacuum-time=1w
+journalctl --vacuum-time=<jtime>
 
 # empty journal by size
-journalctl --vacuum-size=500M
+journalctl --vacuum-size=<jsize>
+
+$ jtime: echo -e '3d\n2w\n3m' | tr '\n' ' '
+$ jsize: echo -e '500M\n1G' | tr '\n' ' '
 
 $ service_inactive: systemctl list-units --type=service --state=inactive | awk '{print $1}' | grep .service | sed 's/.service$//'
 $ service_active: systemctl list-units --type=service --state=active | awk '{print $1}' | grep .service | sed 's/.service$//'
