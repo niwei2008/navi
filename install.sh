@@ -10,6 +10,7 @@ cd /opt/help/navi/ && sudo make install
 sudo yum install npm -y
 sudo npm install -g tldr
 tldr --update
+sudo tldr --update
 
 echo "in case of"
 echo "sudo ln -s /usr/local/bin/navi /bin"
