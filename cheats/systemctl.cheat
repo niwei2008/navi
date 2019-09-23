@@ -30,14 +30,21 @@ systemctl list-unit-files --type=service --state=enabled
 # List disabled services
 systemctl list-unit-files --type=service --state=disabled
 
+# show diskusage
+journalctl --disk-usage
+
 # empty journal by time
 journalctl --vacuum-time=<jtime>
 
 # empty journal by size
 journalctl --vacuum-size=<jsize>
 
+# list module journal and follow
+journalctl -f -u  <service_active> -n <lines>
+
 $ jtime: echo -e '3d\n2w\n1m' | tr '\n' ' '
 $ jsize: echo -e '500M\n1G' | tr '\n' ' '
+# lines: echo "200"
 
 $ service_inactive: systemctl list-units --type=service --state=inactive | awk '{print $1}' | grep .service | sed 's/.service$//'
 $ service_active: systemctl list-units --type=service --state=active | awk '{print $1}' | grep .service | sed 's/.service$//'
