@@ -44,7 +44,7 @@ journalctl -f -u  <service_active> -n <lines>
 
 $ jtime: echo -e '3d\n2w\n1m'
 $ jsize: echo -e '500M\n1G'
-# lines: echo -e '100\n200\n300'
+$ lines: echo -e '100\n200\n300'
 
 $ service_inactive: systemctl list-units --type=service --state=inactive | awk '{print $1}' | grep .service | sed 's/.service$//'
 $ service_active: systemctl list-units --type=service --state=active | awk '{print $1}' | grep .service | sed 's/.service$//'
