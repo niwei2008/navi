@@ -2,8 +2,8 @@
 
 
 # If you select 2 for x, the possible values of y will be 12 and 22
-echo <x> <y>
+echo <x1> <y1>
 
 
-$ x: echo -e '1\n2\n3' | tr '\n' ' '
-$ y: echo "$((x+10))" "$((x+20))" | tr '\n' ' '
+$ x1: echo -e '1\n2\n3' | tr '\n' ' '
+$ y1: echo "$((x1+10))" "$((x1+20))" | tr '\n' ' '
