@@ -17,10 +17,10 @@ cat access.log | wc -l
 # nginx day pv
 cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p' | wc -l
 
-# nginx total uv
+# nginx total pv
 cat access.log | awk '{print $1}' | sort -k1 -r | uniq | wc -l
 
-# nginx day uv
+# nginx day pv
 cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p'  | awk '{print $1}' | sort -k1 -r | uniq | wc -l
 
 $ month_eng: echo -e 'Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec'
