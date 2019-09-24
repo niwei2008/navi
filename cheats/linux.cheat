@@ -18,9 +18,6 @@ lsb_release -a
 # epel source
 yum install -y epel-release && yum clean all && yum makecache
 
-# get own ip
-curl ifconfig.me
-
 # cp no overwrite
 awk 'BEGIN { cmd="sudo cp -ri /usr/local/nginx/html/* /home/wbzSup/wbz-web "; print "n" |cmd; }'
 
