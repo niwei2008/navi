@@ -7,7 +7,10 @@ sed -i 's/#Port 22/Port 9988/'  /etc/ssh/sshd_config
 systemctl restart sshd
 
 # history enhance
-echo -e "\nexport HISTTIMEFORMAT='%F %T '\nexport HISTFILESIZE=1000000\nexport HISTSIZE=1000\n" >>/etc/bashrc && source /etc/bashrc
+echo -e "\nexport HISTTIMEFORMAT='%F %T '\nexport HISTFILESIZE=1000000\nexport HISTSIZE=1000\n" >>/etc/bashrc
+
+# update bash
+source /etc/bashrc
 
 # init set hostname step1
 hostnamectl set-hostname <hostname>
