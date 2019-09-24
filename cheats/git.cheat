@@ -59,3 +59,12 @@ git clean -dxf
 git rebase master -S -f
 
 $ branch: git branch | awk '{print $NF}'
+
+
+# change upstream branch
+git branch --set-upstream-to=origin/<branch_name> <branch>
+
+# simple git push
+git push -u origin master
+
+

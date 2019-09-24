@@ -1,0 +1,12 @@
+% rabbitmq
+
+# add user
+rabbitmqctl add_user <newuser_name> <newuser_password>
+
+# set user privilege
+rabbitmqctl set_user_tags <user_name> <rabbit_privilege>
+
+
+$ user_name: rabbitmqctl list_users  | awk 'NR == 2 {next} NR == 1 {next} {print $1}'
+$ rabbit_privilege: echo -e 'management\nadministrator'
+
