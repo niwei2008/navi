@@ -1,0 +1,38 @@
+% linux
+
+# max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+sysctl -a|grep vm.max_map_count
+
+# enlarge  virtual memory
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+
+# system dir1
+cd /usr/lib/systemd/system/
+
+# system dir2
+cd /etc/systemd/system/
+
+# linux version
+lsb_release -a
+
+# epel source
+yum install -y epel-release && yum clean all && yum makecache
+
+# get own ip
+curl ifconfig.me
+
+# cp no overwrite
+awk 'BEGIN { cmd="sudo cp -ri /usr/local/nginx/html/* /home/wbzSup/wbz-web "; print "n" |cmd; }'
+
+# no ssl check to wget
+wget 'https://x.x.x.x/get_ips' --no-check-certificate
+
+# add user
+adduser <newuser_name>
+
+# set user password
+passwd <newuser_name>
+
+# send email
+sendEmail -f "xinxuejie2019@163.com" -t niwei@yodoo.net.cn -s smtp.163.com -u "mysql failed" -xu xinxuejie2019@163.com -xp "Xxj163123456" -m "mysql failed"
+
