@@ -54,4 +54,4 @@ echo "" > ~/.bash_history && history -c
 # set timezone
 timedatectl set-timezone <newtimezone>
 
-$ newtimezone: timedatectl list-timezones
+$ newtimezone: timedatectl list-timezones | grep Asia
