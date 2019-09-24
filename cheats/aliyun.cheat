@@ -1,0 +1,7 @@
+% aliyun
+
+#install aliyun disk tool
+yum install cloud-utils-growpart -y
+
+# enlarge system disk
+growpart /dev/vda 1 &&  resize2fs  /dev/vda1
