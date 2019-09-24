@@ -6,6 +6,39 @@ rabbitmqctl add_user <newuser_name> <newuser_password>
 # set user privilege
 rabbitmqctl set_user_tags <user_name> <rabbit_privilege>
 
+# rabbitmq set ha1
+rabbitmqctl set_policy ha-all "^" '{"ha-mode":"all"}'
+
+# rabbitmq set ha2
+rabbitmqctl set_policy ha-all "" '{"ha-mode":"all","ha-sync-mode":"automatic"}'
+
+# rabbitmq get cluster_status
+rabbitmqctl --node rabbit cluster_status
+
+# rabbitmq remove node
+rabbitmqctl -n rabbit@dev forget_cluster_node rabbit@ops
+
+# rabbitmq remove node2
+rabbitmqctl forget_cluster_node rabbit@ops
+
+# rabbitmq change password
+rabbitmqctl change_password <user_name> <newuser_password>
+
+# rabbitmq shovel enable
+rabbitmq-plugins enable rabbitmq_shovel
+
+# rabbitmq shovel_management enable
+rabbitmq-plugins enable rabbitmq_shovel_management
+
+# rabbitmq stop
+rabbitmqctl stop_app
+
+# rabbitmq reset
+rabbitmqctl reset
+
+# rabbitmq start
+rabbitmqctl start_app
+
 
 $ user_name: rabbitmqctl list_users  | awk 'NR == 2 {next} NR == 1 {next} {print $1}'
 $ rabbit_privilege: echo -e 'management\nadministrator'
