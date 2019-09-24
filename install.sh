@@ -9,6 +9,7 @@ cd /opt/help/navi/ && sudo make install
 sudo ln -s /usr/local/bin/navi /bin/adm
 
 sudo yum install npm -y
+sudo apt install npm -y
 sudo npm install -g tldr
 tldr --update
 sudo tldr --update
