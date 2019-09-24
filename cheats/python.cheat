@@ -1,0 +1,7 @@
+% python
+
+# python3 install
+yum -y install python36 python36-devel
+
+# python3 env enter
+python3.6 -m venv /opt/py3  && source /opt/py3/bin/activate
