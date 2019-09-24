@@ -12,7 +12,7 @@ $ logfile:  ls -l  | awk '{print $9}'
 cat access.log | awk '{print substr($4,14,5)}' | uniq -c | awk '{print $2","$1}' | sort -k1 | awk '{print $2","$1}' > access.csv
 
 # nginx total uv
-cat access.log | wc ¨Cl
+cat access.log | wc -l
 
 # nginx day pv
 cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p' | wc -l
