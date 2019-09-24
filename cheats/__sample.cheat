@@ -9,4 +9,7 @@ $ x1: echo -e '1\n2\n3' | tr '\n' ' '
 $ y1: echo "$((x1+10))" "$((x1+20))" | tr '\n' ' '
 
 $ jtime: echo -e '3d\n2w\n1m'
-$ logfile:  ls -l  | awk '{print $9}'
+
+# navi fzf install for new user account
+/opt/help/fzf/install --key-bindings      --completion      --update-rc   &&      source ~/.bashrc
+
