@@ -1,0 +1,27 @@
+% nginx
+
+# nginx top 10 ip
+cat <localfile> |cut -d ' ' -f 1 | sort |uniq -c | sort -nr | awk '{print $0 }' | head -n 10
+
+# nginx get total UV
+cat <localfile> | awk '{print $1}' | sort -k1 -r | uniq | wc -l
+
+$ logfile:  ls -l  | awk '{print $9}'
+
+# nginx per minute
+cat access.log | awk '{print substr($4,14,5)}' | uniq -c | awk '{print $2","$1}' | sort -k1 | awk '{print $2","$1}' > access.csv
+
+# nginx total uv
+cat access.log | wc ¨Cl
+
+# nginx day pv
+cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p' | wc -l
+
+# nginx total uv
+cat access.log | awk '{print $1}' | sort -k1 -r | uniq | wc -l
+
+# nginx day uv
+cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p'  | awk '{print $1}' | sort -k1 -r | uniq | wc -l
+
+$ month_eng: echo -e 'Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec'
+

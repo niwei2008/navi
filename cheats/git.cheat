@@ -67,4 +67,7 @@ git branch --set-upstream-to=origin/<branch_name> <branch>
 # simple git push
 git push -u origin master
 
+# gitlab restart
+gitlab-ctl restart
+
 
