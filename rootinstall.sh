@@ -8,6 +8,7 @@ cd /opt/help/navi/ && sudo make install
 ln -s /usr/local/bin/navi /bin/adm
 
 yum install npm -y
+apt install npm -y
 npm install -g tldr
 tldr --update
 chmod 777 /tmp/tldr/
