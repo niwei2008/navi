@@ -11,16 +11,16 @@ $ logfile:  ls -l  | awk '{print $9}'
 # nginx per minute
 cat access.log | awk '{print substr($4,14,5)}' | uniq -c | awk '{print $2","$1}' | sort -k1 | awk '{print $2","$1}' > access.csv
 
-# nginx total uv
+# nginx total pv
 cat access.log | wc -l
 
 # nginx day pv
 cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p' | wc -l
 
-# nginx total pv
+# nginx total uv
 cat access.log | awk '{print $1}' | sort -k1 -r | uniq | wc -l
 
-# nginx day pv
+# nginx day uv
 cat access.log | sed -n '/<day>\/<month_eng>\/<year>/p'  | awk '{print $1}' | sort -k1 -r | uniq | wc -l
 
 $ month_eng: echo -e 'Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec'
