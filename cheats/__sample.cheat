@@ -10,6 +10,8 @@ $ y1: echo "$((x1+10))" "$((x1+20))" | tr '\n' ' '
 
 $ jtime: echo -e '3d\n2w\n1m'
 
-# navi fzf install for new user account
+# navi adm fzf install for new user account
 su -c "/opt/help/fzf/install --key-bindings      --completion      --update-rc "  <linux_user_name>
+
+$ linux_user_name: cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F":" '{ print $1 }'
 
