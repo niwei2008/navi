@@ -12,11 +12,11 @@ echo -e "\nexport HISTTIMEFORMAT='%F %T '\nexport HISTFILESIZE=1000000\nexport H
 # update bash
 source /etc/bashrc
 
-# init set hostname step1
+# init set hostname
 hostnamectl set-hostname <hostname>
 
-# init change hostname step2
-vi /etc/hosts
+# init update hosts, yodoo only
+/bin/cp -f /etc/hosts /etc/hosts.ori  && curl -o /etc/hosts http://ops.feikongbao.cn/open/hosts
 
 # init ssh key gen
 ssh-keygen -t rsa -C "<email_address>"
@@ -24,7 +24,7 @@ ssh-keygen -t rsa -C "<email_address>"
 # init show pub key
 more ~/.ssh/id_rsa.pub
 
-# init change docker sourceimage
+# init change docker sourceimage, yodoo only
 sed -i '/--add-runtime/i\          --add-registry=gitlab.feikongbao.cn:8088 --insecure-registry=gitlab.feikongbao.cn:8088 \\'  /usr/lib/systemd/system/docker.service
 
 # install sz rz
