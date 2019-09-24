@@ -34,5 +34,16 @@ adduser <newuser_name>
 passwd <newuser_name>
 
 # send email
-sendEmail -f "xinxuejie2019@163.com" -t niwei@yodoo.net.cn -s smtp.163.com -u "mysql failed" -xu xinxuejie2019@163.com -xp "Xxj163123456" -m "mysql failed"
+sendEmail -f "xinxuejie2019@163.com" -t <receiver_email> -s smtp.163.com -u "<mail_topic>"  -o tls=no -xu xinxuejie2019@163.com -xp "Xxj163123456" -m "<mail_content>"
 
+# cpu rank
+ps -aux | sort -rnk 3 | head -5
+
+# memery rank
+ps -aux | sort -rnk 4 | head -5
+
+# nmap ports list
+nmap www.xinxuejie.com.cn -p1-65535
+
+# scp
+scp -r -P 9988 root@dev.yodoo:/srv/jenkins/jenkins_home .

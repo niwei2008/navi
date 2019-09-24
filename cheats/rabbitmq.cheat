@@ -1,6 +1,6 @@
 % rabbitmq
 
-# wni add user
+# add user
 rabbitmqctl add_user <newuser_name> <newuser_password>
 
 # set user privilege
