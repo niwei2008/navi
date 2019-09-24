@@ -11,5 +11,5 @@ $ y1: echo "$((x1+10))" "$((x1+20))" | tr '\n' ' '
 $ jtime: echo -e '3d\n2w\n1m'
 
 # navi fzf install for new user account
-/opt/help/fzf/install --key-bindings      --completion      --update-rc   &&      source ~/.bashrc
+su -c "/opt/help/fzf/install --key-bindings      --completion      --update-rc   &&      source ~/.bashrc"  <<linux_user_name>>
 
