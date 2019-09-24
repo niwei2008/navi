@@ -22,4 +22,8 @@ netstat -nat |awk '{print $6}'|sort|uniq -c|sort -rn
 # port access rank
 netstat -anlp|grep <port> |grep tcp|awk '{print $5}'|awk -F: '{print $1}'|sort|uniq -c|sort -nr|head -n20
 
+# get ip
+curl ifconfig.me
+
+
 
