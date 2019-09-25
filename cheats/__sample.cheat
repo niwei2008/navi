@@ -10,7 +10,7 @@ $ jtime: echo -e '3d\n2w\n1m'
 
 
 # navi update adm update
-GIT_DIR=/opt/help/navi/.git git pull
+cd /opt/help/navi && git pull
 
 # navi adm fzf install for new user account
 su -c "/opt/help/fzf/install --key-bindings      --completion      --update-rc "  <linux_user_name>
