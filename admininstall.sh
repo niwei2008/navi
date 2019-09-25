@@ -17,3 +17,4 @@ sudo chmod 777 /tmp/tldr/
 
 echo "in case of"
 echo "sudo ln -s /opt/nodejs/lib/node_modules/tldr/bin/tldr /bin"
+echo "sudo ln -s /lib/node/node_global/bin/tldr /bin"
