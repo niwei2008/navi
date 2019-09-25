@@ -48,6 +48,9 @@ scp -r -P 9988 root@dev.yodoo:/srv/jenkins/jenkins_home .
 # clear history
 echo "" > ~/.bash_history && history -c
 
+# path
+echo $PATH
+
 # set timezone
 timedatectl set-timezone <newtimezone>
 
