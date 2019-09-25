@@ -9,11 +9,11 @@
 # neo4j log
 tail -n 200 -f /opt/neo4j-enterprise-3.4.5/logs/neo4j.log
 
-# neo4j list users on dev server
+# neo4j list users
 echo "CALL dbms.security.listUsers();" |  /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
 
-# neo4j procedure list on dev server
+# neo4j procedure list
 echo "CALL dbms.procedures();" | /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
 
-# neo4j match all on dev server
+# neo4j match all
 echo "match(n) return n;" | /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
