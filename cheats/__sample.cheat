@@ -15,6 +15,6 @@ su -c "/opt/help/fzf/install --key-bindings      --completion      --update-rc "
 
 $ linux_user_name: cat /etc/passwd|grep -v nologin|grep -v halt|grep -v shutdown|awk -F":" '{ print $1 }'
 
-# navi update adm update
+# navi update  adm update
 git --git-dir=/opt/help/navi/.git pull
 
