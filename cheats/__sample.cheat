@@ -9,8 +9,8 @@ $ y1: echo "$((x1+10))" "$((x1+20))" | tr '\n' ' '
 $ jtime: echo -e '3d\n2w\n1m'
 
 
-# navi update  adm update
-git --git-dir=/opt/help/navi/.git pull
+# navi update adm update
+echo <x1> <y1>
 
 # navi adm fzf install for new user account
 su -c "/opt/help/fzf/install --key-bindings      --completion      --update-rc "  <linux_user_name>
