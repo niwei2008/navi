@@ -1,0 +1,19 @@
+% neo4j, yodoo
+
+# neo4j start
+/opt/neo4j-enterprise-3.4.5/bin/neo4j start
+
+# neo4j stop
+/opt/neo4j-enterprise-3.4.5/bin/neo4j stop
+
+# neo4j log
+tail -n 200 -f /opt/neo4j-enterprise-3.4.5/logs/neo4j.log
+
+# neo4j list users on dev server
+echo "CALL dbms.security.listUsers();" |  /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
+
+# neo4j procedure list on dev server
+echo "CALL dbms.procedures();" | /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
+
+# neo4j match all on dev server
+echo "match(n) return n;" | /opt/neo4j-enterprise-3.4.5/bin/cypher-shell  -u <username> -p <password>   -a bolt://<hostanme_or_ip>:7687
