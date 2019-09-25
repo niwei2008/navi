@@ -57,3 +57,5 @@ docker update --restart=<restart_type> <container_id>
 
 $ restart_type: echo -e 'always\nno\non-failure:3'
 
+# cmatrix
+docker run --rm -it inutano/cmatrix
