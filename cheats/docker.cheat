@@ -54,7 +54,7 @@ docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAdd
 docker build -t <builded_image_name> .
 
 # docker auto restart
-docker update --restart=<restart_type> <container_id_all>
+docker container update --restart=<restart_type> <container_id_all>
 
 $ restart_type: echo -e 'always\nno\non-failure:3'
 
