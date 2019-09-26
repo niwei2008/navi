@@ -41,6 +41,7 @@ docker volume prune
 
 $ image_id: docker images --- --headers 1 --column 3
 $ container_id: docker ps --- --headers 1 --column 1
+$ container_id_all: docker ps -a --- --headers 1 --column 1
 
 # docker cp into container
 docker cp <localfile> <container_id>:<dir_or_file_in_container>
@@ -53,7 +54,7 @@ docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAdd
 docker build -t <builded_image_name> .
 
 # docker auto restart
-docker update --restart=<restart_type> <container_id>
+docker update --restart=<restart_type> <container_id_all>
 
 $ restart_type: echo -e 'always\nno\non-failure:3'
 
