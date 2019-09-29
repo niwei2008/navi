@@ -1,0 +1,21 @@
+% routes
+
+# route add
+route add <dest_ips> mask <ip_mask>  <gateway_ip> metric 3 if 0
+
+# route delete
+route delete <dest_ips>
+
+# route change
+route change <dest_ips> mask <ip_mask> <gateway_ip> metric 2 if 0
+
+$ ip_mask:  echo -e '255.255.255.255\n255.255.255.0\n255.255.0.0'
+
+# trace route use tcp protocal
+traceroute -T -p 3306 172.19.88.60
+
+# tcpdump  https://www.cnblogs.com/Jtianlin/p/4330723.html
+tcpdump <tcp_or_udp> port <port>
+
+$ tcp_or_udp echo -e 'tcp\nudp'
+
