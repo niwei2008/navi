@@ -55,3 +55,7 @@ echo $PATH
 timedatectl set-timezone <newtimezone>
 
 $ newtimezone: timedatectl list-timezones | grep Asia
+
+
+# user list
+more /etc/passwd
