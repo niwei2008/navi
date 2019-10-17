@@ -62,4 +62,18 @@ more /etc/passwd
 
 # format disk ext4
 mkfs.ext4 /dev/<device_name>
-$ device_name: echo -e 'vdb\nvdc\nvdd\nxvdb\nxvdc'
+$ device_name: echo -e 'vdb\nvdc\nvdd\nxvdb\nxvdc
+
+# kill by keyword
+kill `ps -ef|grep <key_word> | grep -v "grep"|awk '{print $2} '`
+
+# kill by keyword force
+kill -9 `ps -ef|grep <key_word> | grep -v "grep"|awk '{print $2} '`
+
+# kill by port
+kill $(sudo netstat -nlp | grep :<ps_port> | awk '{print $7}' | awk -F"/" '{ print $1 }')
+
+# kill by port force
+kill -9 $(sudo netstat -nlp | grep :<ps_port> | awk '{print $7}' | awk -F"/" '{ print $1 }')
+
+$ ps_port: netstat -tnl | grep LISTEN | cut -d":" -f2|awk '{print $1}'| sort -n | uniq
