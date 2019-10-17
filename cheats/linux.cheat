@@ -76,4 +76,4 @@ kill $(sudo netstat -nlp | grep :<ps_port> | awk '{print $7}' | awk -F"/" '{ pri
 # kill by port force
 kill -9 $(sudo netstat -nlp | grep :<ps_port> | awk '{print $7}' | awk -F"/" '{ print $1 }')
 
-$ ps_port: netstat -tnl | grep LISTEN | cut -d":" -f2|awk '{print $1}'| sort -n | uniq
+$ ps_port: netstat -tnlp |tail -n +3 |awk '{print $4" "}'|grep '[0-9]\+ ' -o
