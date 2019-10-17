@@ -59,3 +59,7 @@ $ newtimezone: timedatectl list-timezones | grep Asia
 
 # user list
 more /etc/passwd
+
+# format disk ext4
+mkfs.ext4 /dev/<device_name>
+$ device_name: echo -e 'vdb\nvdc\nvdd\nxvdb\nxvdc'
