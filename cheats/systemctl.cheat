@@ -53,3 +53,6 @@ $ jtime: echo -e '3d\n2w\n1m'
 $ jsize: echo -e '500M\n1G'
 $ lines: echo -e '100\n200\n300'
 
+# init systemctl link
+ln -s /bin/systemctl /bin/ctl
+
